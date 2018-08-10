@@ -38,7 +38,7 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
                     // - 10.0.2.2 is localhost's IP address in Android emulator
                     // - turn off compression when running against local devappserver
                     //.setRootUrl("https://jokeapp861904.appspot.com/_ah/api/") //google cloud
-                        .setRootUrl("http://10.0.2.2:8080/_ah/api/")     //emulator
+                   .setRootUrl("http://10.0.2.2:8080/_ah/api/")     //emulator
                     //.setRootUrl("http://<computer ip>:8080/_ah/api/") //computer ip4 address
                     .setApplicationName("jokeapp")
                     .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {

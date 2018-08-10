@@ -11,9 +11,9 @@ import java.util.Random;
 
 public class DisplayActivity extends AppCompatActivity {
 
-    TextView jokeText;
-    ImageView jokeImage;
-    Random random;
+    private TextView jokeText;
+    private ImageView jokeImage;
+    private Random random;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +26,23 @@ public class DisplayActivity extends AppCompatActivity {
         //Set a random image to display
         random = new Random();
         int val = random.nextInt(4);
-        if(val == 0)jokeImage.setImageResource(R.drawable.funnya);
-        else if(val == 1)jokeImage.setImageResource(R.drawable.funnyb);
-        else if(val == 2)jokeImage.setImageResource(R.drawable.funnyc);
-        else if(val == 3)jokeImage.setImageResource(R.drawable.funnyd);
-        else jokeImage.setImageResource(R.drawable.funnyd);
+        switch (val) {
+            case 0:
+                jokeImage.setImageResource(R.drawable.funnya);
+                break;
+            case 1:
+                jokeImage.setImageResource(R.drawable.funnyb);
+                break;
+            case 2:
+                jokeImage.setImageResource(R.drawable.funnyc);
+                break;
+            case 3:
+                jokeImage.setImageResource(R.drawable.funnyd);
+                break;
+            default:
+                jokeImage.setImageResource(R.drawable.funnyd);
+                break;
+        }
 
         Intent intent = getIntent();
         if(intent.hasExtra("JOKE")) {

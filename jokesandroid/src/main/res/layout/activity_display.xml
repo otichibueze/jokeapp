@@ -14,6 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/image_height"
         android:scaleType="centerCrop"
+        android:contentDescription="@string/funny_image"
         tools:src="@drawable/funnyd"
         />
 

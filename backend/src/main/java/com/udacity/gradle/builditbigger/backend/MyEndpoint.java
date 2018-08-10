@@ -18,20 +18,20 @@ import javax.inject.Named;
 )
 public class MyEndpoint {
 
-//    /** A simple endpoint method that takes a name and says Hi back */
-//    @ApiMethod(name = "joke")  //Here the name of the API method
-//    public MyBean joke(MyBean response) {
-//        //above we just call the class Mybean and return it, this we will consume in EndpointsAsyncTask
-//        return response;
-//    }
-
     /** A simple endpoint method that takes a name and says Hi back */
-    @ApiMethod(name = "sayHi")
-    public MyBean sayHi(@Named("name") String name) {
-        MyBean response = new MyBean();
-        response.setData("Hi, " + name);
-
+    @ApiMethod(name = "joke")  //Here the name of the API method
+    public MyBean joke(MyBean response) {
+        //above we just call the class Mybean and return it, this we will consume in EndpointsAsyncTask
         return response;
     }
+
+//    /** A simple endpoint method that takes a name and says Hi back */
+//    @ApiMethod(name = "sayHi")
+//    public MyBean sayHi(@Named("name") String name) {
+//        MyBean response = new MyBean();
+//        response.setData("Hi, " + name);
+//
+//        return response;
+//    }
 
 }

@@ -5,12 +5,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="@dimen/layoutmargin"
+    android:orientation="vertical"
     tools:context="com.chibusoft.jokesandroid.DisplayActivity">
+
+    <ImageView
+        android:id="@+id/funny_image"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/image_height"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/funnyd"
+        />
 
     <TextView
         android:id="@+id/joke_text"
-        tools:text="Hello"
-        android:textSize="30sp"
+        tools:text="You spend the first 2 years of a child's life teaching them to walk and talk. Then you spend the next 16 years telling them to sit down and shut-up."
+        android:textSize="@dimen/joke_text_size"
+        android:layout_marginTop="@dimen/joke_margin_top"
         android:textAlignment="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

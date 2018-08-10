@@ -31,7 +31,7 @@ dependencies {
     implementation 'javax.servlet:servlet-api:2.5'
     implementation 'com.google.api-client:google-api-client:1.23.0'
     implementation 'com.google.http-client:google-http-client-android:1.23.0'
-    //compile project(':jokelib')
+    implementation project(':jokelib')
 }
 
 //apply plugin: 'announce'
@@ -40,5 +40,7 @@ appengine {
     run {
         // Timeout after 60 seconds
         startSuccessTimeout = 60
+        //computer ip4 address
+        host ='0.0.0.0'
     }
 }

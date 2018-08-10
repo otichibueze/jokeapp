@@ -7,23 +7,26 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.chibusoft.jokesandroid.DisplayActivity;
 import com.chibusoft.jokelib.jokes;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements  EndpointsAsyncTask.PostExecuteListener {
 
     private String joke = "";
+    public static ProgressBar spinner;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-       // new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
-       // new EndpointsAsyncTask(this).execute();
+        spinner = (ProgressBar)findViewById(R.id.progressBar1);
+        spinner.setVisibility(View.GONE);
     }
 
 
@@ -49,17 +52,19 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //public void tellJoke(View view) {
-    //    Toast.makeText(this, "derp", Toast.LENGTH_SHORT).show();
-    //}
 
     public void tellJoke(View view) {
-        jokes myJoker = new jokes();
-        joke = myJoker.getjoke();
-        Intent myIntent = new Intent(this, DisplayActivity.class);
-        myIntent.putExtra("JOKE", joke);
-        startActivity(myIntent);
+        spinner.setVisibility(View.VISIBLE);
+        new EndpointsAsyncTask(this, this).execute();
     }
 
 
+    //Listener to start activity when joke is done loading
+    @Override
+    public void onPostExecuteListener(String joke) {
+        Intent myIntent = new Intent(this, DisplayActivity.class);
+        myIntent.putExtra("JOKE", joke);
+        MainActivity.spinner.setVisibility(View.GONE);
+        startActivity(myIntent);
+    }
 }

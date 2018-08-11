@@ -19,10 +19,17 @@ public class MyEndpoint {
 
     /** A simple endpoint method that takes a name and says Hi back */
     @ApiMethod(name = "joke")  //Here the name of the API method
-    public MyBean joke(MyBean response) {
+    public MyBean joke() {
         //above we just call the class Mybean and return it, this we will consume in EndpointsAsyncTask
+        MyBean response = new MyBean();
         return response;
     }
+
+//    @ApiMethod(name = "joke")  //Here the name of the API method
+//    public MyBean joke(MyBean response) {
+//        //above we just call the class Mybean and return it, this we will consume in EndpointsAsyncTask
+//        return response;
+//    }
 
 //    /** A simple endpoint method that takes a name and says Hi back */
 //    @ApiMethod(name = "sayHi")

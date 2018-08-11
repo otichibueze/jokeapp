@@ -14,6 +14,7 @@ public class DisplayActivity extends AppCompatActivity {
     private TextView jokeText;
     private ImageView jokeImage;
     private Random random;
+    public static final String JOKE = "joke";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,8 +46,8 @@ public class DisplayActivity extends AppCompatActivity {
         }
 
         Intent intent = getIntent();
-        if(intent.hasExtra("JOKE")) {
-            String joke = intent.getStringExtra("JOKE");
+        if(intent.hasExtra(JOKE)) {
+            String joke = intent.getStringExtra(JOKE);
             jokeText.setText(joke);
         }
     }

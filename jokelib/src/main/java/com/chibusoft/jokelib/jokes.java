@@ -68,7 +68,7 @@ public class jokes {
     public String getjoke()
     {
         random = new Random();
-        int val = random.nextInt(50);
+        int val = random.nextInt(myJokes.length);
         //int val = (int )(Math.random() * 49 + 0);
         return myJokes[val];
     }

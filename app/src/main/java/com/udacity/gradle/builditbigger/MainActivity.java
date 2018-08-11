@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements  EndpointsAsyncTa
     @Override
     public void onPostExecuteListener(String joke) {
         Intent myIntent = new Intent(this, DisplayActivity.class);
-        myIntent.putExtra("JOKE", joke);
+        myIntent.putExtra(DisplayActivity.JOKE, joke);
         MainActivity.spinner.setVisibility(View.GONE);
         startActivity(myIntent);
     }

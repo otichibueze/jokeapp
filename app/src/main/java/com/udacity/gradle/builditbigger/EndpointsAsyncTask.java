@@ -2,6 +2,8 @@ package com.udacity.gradle.builditbigger;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
+
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
@@ -11,9 +13,11 @@ import com.udacity.gradle.builditbigger.backend.myApi.model.MyBean;
 import java.io.IOException;
 
 public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
+    private static final String LOG_TAG = EndpointsAsyncTask.class.getSimpleName();
     private static MyApi myApiService = null;
     private Context context;
     private String results;
+    public static final String ERROR_MSG = "Error could not get joke";
     //private String myipAddress = BuildConfig.My_ip_Address;
 
     private final PostExecuteListener postExecuteListener;
@@ -38,8 +42,8 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
                     // - 10.0.2.2 is localhost's IP address in Android emulator
                     // - turn off compression when running against local devappserver
                     //.setRootUrl("https://jokeapp861904.appspot.com/_ah/api/") //google cloud
-                   .setRootUrl("http://10.0.2.2:8080/_ah/api/")     //emulator
-                    //.setRootUrl("http://<computer ip>:8080/_ah/api/") //computer ip4 address
+                   //.setRootUrl("http://10.0.2.2:8080/_ah/api/")     //emulator
+                    .setRootUrl("http://<computer_ip4_address>:8080/_ah/api/") //computer ip4 address
                     .setApplicationName("jokeapp")
                     .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                         @Override
@@ -54,10 +58,11 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
 
 
         try {
-            return myApiService.joke(new MyBean()).execute().getJoke();
+            return myApiService.joke().execute().getJoke();
             // return myApiService.sayHi(name).execute().getData(); //this is where we call method from my backend/myendpoint
         } catch (IOException e) {
-            return e.getMessage();
+            Log.e(LOG_TAG, e.getMessage());
+            return ERROR_MSG;
         }
     }
 

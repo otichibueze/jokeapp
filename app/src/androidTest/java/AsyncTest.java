@@ -6,6 +6,8 @@ import com.udacity.gradle.builditbigger.EndpointsAsyncTask;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static junit.framework.Assert.assertFalse;
+import static junit.framework.Assert.assertNotSame;
 import static junit.framework.TestCase.assertNotNull;
 @RunWith(AndroidJUnit4.class)
 public class AsyncTest {
@@ -27,8 +29,8 @@ public class AsyncTest {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
         assertNotNull(result);
+        assertNotSame(EndpointsAsyncTask.ERROR_MSG,result);
     }
-
-
 }

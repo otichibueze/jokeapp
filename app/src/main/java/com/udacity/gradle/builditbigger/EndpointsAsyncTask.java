@@ -18,7 +18,7 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
     private Context context;
     private String results;
     public static final String ERROR_MSG = "Error could not get joke";
-    //private String myipAddress = BuildConfig.My_ip_Address;
+    private String myipAddress = BuildConfig.My_ip_Address;
 
     private final PostExecuteListener postExecuteListener;
 
@@ -43,7 +43,7 @@ public class EndpointsAsyncTask extends AsyncTask<Void, Void, String> {
                     // - turn off compression when running against local devappserver
                     //.setRootUrl("https://jokeapp861904.appspot.com/_ah/api/") //google cloud
                    //.setRootUrl("http://10.0.2.2:8080/_ah/api/")     //emulator
-                    .setRootUrl("http://<computer_ip4_address>:8080/_ah/api/") //computer ip4 address
+                    .setRootUrl("http://" + myipAddress + ":8080/_ah/api/") //computer ip4 address from cmd -- type ipconfig
                     .setApplicationName("jokeapp")
                     .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                         @Override

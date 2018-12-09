@@ -34,9 +34,9 @@ android {
         }
     }
 
-//    buildTypes.each{
-//        it.buildConfigField 'String', 'My_ip_Address', MyipAddress
-//    }
+    buildTypes.each{
+        it.buildConfigField 'String', 'My_ip_Address', MyipAddress
+    }
 
     flavorDimensions "default"
     productFlavors {

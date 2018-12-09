@@ -1,4 +1,17 @@
-# Gradle for Android and Java Final Project
+# Jokeapp
+## Build It Bigger
+
+This project is created under Google Udacity Android Developer Nanodegree.
+
+## Screenshots
+![alt text](https://github.com/otichibueze/jokeapp/blob/master/screenshots/b.png)
+![alt text](https://github.com/otichibueze/jokeapp/blob/master/screenshots/a.png)
+
+
+
+## Gradle for Android and Java Final Project
+![alt text](https://github.com/otichibueze/jokeapp/blob/master/screenshots/project-overview.png)
+
 
 In this project, you will create an app with multiple flavors that uses
 multiple libraries and Google Cloud Endpoints. The finished app will consist
@@ -166,3 +179,24 @@ Once you have a functioning project, consider adding more features to test your 
 * Make the free app variant display interstitial ads between the main activity and the joke-displaying activity.
 * Have the app display a loading indicator while the joke is being fetched from the server.
 * Write a Gradle task that starts the GCE dev server, runs all the Android tests, and shuts down the dev server.
+
+
+## Connect With Me On
+[![N|Solid](https://github.com/otichibueze/jokeapp/blob/master/screenshots/linkedin.png)](https://www.linkedin.com/in/chibuezeoti)
+
+## License
+```
+Copyright 2018 Chibusoft, Inc.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
